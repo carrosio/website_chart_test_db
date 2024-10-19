@@ -51,7 +51,7 @@ def process_user_data(ig_name, rolling_window):
     
     return rolling_mean.rolling(SMOOTHING_WINDOW).mean()
 
-markers_df['date'] = pd.to_datetime(markers_df['date'], format='mixed')
+markers_df['date'] = pd.to_datetime(markers_df['date'])
 ig_comments_df['comment_datetime'] = pd.to_datetime(ig_comments_df['comment_datetime'], format='mixed')
 
 @app.route('/')
